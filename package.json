@@ -1,7 +1,9 @@
 {
   "name": "emprendating",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "@material/card": "^0.37.0"
+  },
   "devDependencies": {
     "css-loader": "^1.0.0",
     "extract-loader": "^2.0.1",
