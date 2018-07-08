@@ -2,7 +2,50 @@
 
 <h1>Ideas</h1>
 
-<table>
+
+  <!-- <div class="row">
+    <% @ideas.each do |idea| %>
+      <div class="col">
+
+          <%= image_tag idea.picture.card, class: 'card-img-top'%>
+
+          <h3><%= idea.name %></h3>
+          <%= link_to 'Show', idea %>
+          <%= link_to 'Edit', edit_idea_path(idea) %>
+          <%= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+
+      </div>
+    <% end %>
+  </div> -->
+  <div class="container">
+
+    <div class="row">
+      <% @ideas.each_slice(1) do |row| %>
+        <% row.each do |idea| %>
+
+            <div class="card">
+                <%= image_tag idea.picture.card %>
+                <div class="body">
+                  <h4><%= idea.name %></h4>
+                  <%= link_to 'Show', idea %>
+                  <%= link_to 'Edit', edit_idea_path(idea) %>
+                  <%= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' } %>
+                </div>
+            </div>
+            <div class="w-100">
+
+            </div>
+
+        <% end %>
+      <% end %>
+    </div>
+
+</div>
+
+
+
+<!-- <table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -24,13 +67,14 @@
         <td><%= idea.category %></td>
         <td><%= idea.phase %></td>
         <td><%= image_tag idea.picture.card %></td>
+        <td><%= idea.user.name %></td>
         <td><%= link_to 'Show', idea %></td>
         <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
         <td><%= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
-</table>
+</table> -->
 
 <br>
 
